@@ -1,0 +1,73 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="8">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form cForm (ngSubmit)="login()">
+                <h1>Ingresar</h1>
+                <p class="text-medium-emphasis">Iniciar Sesion</p>
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+                  <input 
+                  autoComplete="username"
+                  cFormControl
+                  placeholder="Usuario"
+                  [(ngModel)]="user"
+                  name="user"
+                  required
+                  />
+                </c-input-group>
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input
+                    autoComplete="current-password"
+                    cFormControl
+                    placeholder="contraseña"
+                    type="password"
+                    [(ngModel)]="pass"
+                  name="pass"
+                  required
+                  />
+                </c-input-group>
+                <c-col class="text-center" *ngIf="invalid">
+                  <div style="color: red;">Usuario y/o contraseña invalidos</div>
+                </c-col>
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton class="px-4" color="success" type="submit">
+                      Ingresar
+                    </button>
+                  </c-col>
+                  <c-col class="text-right" xs="6">
+                    <button cButton class="px-0" color="link">
+                    Olvide Mi Contraseña?
+                    </button>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+          <c-card [ngStyle]="{'width.%': 44}" class="text-white bg-success py-5">
+            <c-card-body class="text-center">
+              <div>
+                <h2>Registrarse</h2>
+                <p>
+                  Bienvenido al Fondo de Inversiones <strong>Fiducentral</strong>. Regístrate y accede a una amplia gama de nuestros servicios exclusivos.
+                </p>
+                <button [active]="true" cButton class="mt-3" color="dark" routerLink="/register">
+                  Registrarse Ahora!
+                </button>
+              </div>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
